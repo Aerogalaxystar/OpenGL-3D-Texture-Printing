@@ -1,0 +1,46 @@
+# Project: Opengl10
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o glad.o shaderclass.o VAO.o VBO.o Texture.o "../../Opengl\ 9/stb.o"
+LINKOBJ  = main.o glad.o shaderclass.o VAO.o VBO.o Texture.o "../../Opengl 9/stb.o"
+LIBS     = -L"C:/Docs/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Docs/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -lopengl32 -lglfw3 -lGdi32
+INCS     = -I"C:/Docs/Dev-Cpp/TDM-GCC-64/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Docs/Dev-Cpp/TDM-GCC-64/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Docs/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"C:/Docs/Assimp/include/assimp"
+BIN      = Opengl10.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = C:\Docs\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+glad.o: glad.cpp
+	$(CPP) -c glad.cpp -o glad.o $(CXXFLAGS)
+
+shaderclass.o: shaderclass.cpp
+	$(CPP) -c shaderclass.cpp -o shaderclass.o $(CXXFLAGS)
+
+VAO.o: VAO.cpp
+	$(CPP) -c VAO.cpp -o VAO.o $(CXXFLAGS)
+
+VBO.o: VBO.cpp
+	$(CPP) -c VBO.cpp -o VBO.o $(CXXFLAGS)
+
+Texture.o: Texture.cpp
+	$(CPP) -c Texture.cpp -o Texture.o $(CXXFLAGS)
+
+"../../Opengl\ 9/stb.o": ../../Opengl\ 9/stb.cpp
+	$(CPP) -c "../../Opengl 9/stb.cpp" -o "../../Opengl 9/stb.o" $(CXXFLAGS)
