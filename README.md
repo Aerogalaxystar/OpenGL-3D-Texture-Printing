@@ -6,7 +6,7 @@ Requirements :\
 2.OpenGL Libraries (GLFW is used in the project).
 
 Learned :\
-1.Implemented Specular ,ambient and Directional Lightning.
+1.Implemented Specular ,ambient and Directional Lightning.\
 2.Camera Control.
 
 
